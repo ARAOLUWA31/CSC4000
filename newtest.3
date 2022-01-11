@@ -1,0 +1,18 @@
+#!/bin/sh
+TEST=$0
+
+# this is the commandline to use
+CMD="./filesize"
+
+# this is the correct output
+cat > $TEST.correct << ==EOF==
+program: ./filesize
+==EOF==
+
+# don't change anything else
+$CMD > $TEST.myoutput
+if cmp -s $TEST.correct $TEST.myoutput; then
+    echo "PASSES"; exit 0
+else
+    echo "FAILS"; exit 99
+fi

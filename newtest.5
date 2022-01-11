@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# students must NOT change this file in any way!!!
+TEST=$0
+
+# this is the commandline to use
+CMD="./filesize input.3lines input.1line input.notafile \
+ input.unreadable input.2linesNonewline \
+ input.annoying*file*name  input.just8blanklines"
+
+# this is the correct output
+cat > $TEST.correct << ==EOF==
+program: ./filesize
+ input.3lines: 3
+ input.1line: 1
+ input.notafile: -1
+ input.unreadable: -1
+ input.2linesNonewline: 2
+ input.annoying file name: 3
+ input.just8blanklines: 8
+==EOF==
+
+# make sure input files are correct
+touch input.unreadable
+chmod 000 input.unreadable
+rm -f input.notafile
+
+# don't change anything else
+$CMD > $TEST.myoutput
+if cmp -s $TEST.correct $TEST.myoutput; then
+    echo "PASSES"; exit 0
+else
+    echo "FAILS"; exit 99
+fi
