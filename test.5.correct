@@ -1,8 +1,0 @@
-argv[0]: ./filesize
-argv[1]: input.3lines
-argv[2]: input.1line
-argv[3]: input.notafile
-argv[4]: input.unreadable
-argv[5]: input.2linesNonewline
-argv[6]: input.annoying file name
-argv[7]: input.just8blanklines
