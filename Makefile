@@ -10,11 +10,11 @@ $(TARGET): $(SRCS)
 
 tests: test
 test: $(TARGET)
-	sudo -./newtest.1
-	sudo -./newtest.2
-	sudo -./newtest.3
-	sudo -./newtest.4
-	sudo -./newtest.5
+	-./newtest.1
+	-./newtest.2
+	-./newtest.3
+	-./newtest.4
+	-./newtest.5
 
 clean:
 	rm -f $(TARGET) *.o test.*myoutput
