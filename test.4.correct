@@ -1,0 +1,3 @@
+argv[0]: ./filesize
+argv[1]: input.notafile
+argv[2]: input.unreadable
