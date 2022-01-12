@@ -1,6 +1,0 @@
-#!/bin/sh
-for TEST in ./newtest.?; do
-    echo "${TEST}:"
-    ${TEST} > ${TEST}.myoutput
-    diff -q ${TEST}.correct ${TEST}.myoutput
-done    
